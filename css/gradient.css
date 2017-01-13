@@ -1,0 +1,34 @@
+.gradient-blue {
+    background: linear-gradient(#5555ff, #0000ff);
+    color: #eeeeee;
+}
+.gradient-light-blue {
+    background: linear-gradient(#8888ff, #5555ff);
+    color: #eeeeee;
+}
+.gradient-dark-blue {
+    background: linear-gradient(#0000ff, #000033);
+    color: #eeeeee;
+}
+
+.gradient-red {
+    background: linear-gradient(#ff5555, #ff0000);
+    color: #222222;
+}
+.gradient-light-red {
+    background: linear-gradient(#ff8888, #ff5555);
+    color: #222222;
+}
+.gradient-dark-red {
+    background: linear-gradient(#ff0000, #330000);
+    color: #eeeeee;
+}
+
+.gradient-green {
+    background: linear-gradient(#22ff22, #00bb00);
+    color: #222222;
+}
+.gradient-dark-green {
+    background: linear-gradient(#00bb00, #002200);
+    color: #eeeeee;
+}
