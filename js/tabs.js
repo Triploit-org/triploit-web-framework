@@ -1,4 +1,9 @@
 function Tab(name, content, redirect){
+    function iframeFix(contentElement){
+        contentElement.innerHTML = '<iframe src="' + content + '"></iframe>';
+        console.log("err");
+    }
+    
     function use($, contentElement){
         if(redirect){
             window.location = content;
@@ -9,11 +14,12 @@ function Tab(name, content, redirect){
                 type: "GET",
                 success: function(data){
                     contentElement.innerHTML = data;
-                    console.log("done");
+                    if(contentElement.children.length == 0){
+                        iframeFix(contentElement);
+                    }
                 },
                 error: function(){
-                    contentElement.innerHTML = '<iframe src="' + content + '"></iframe>';
-                    console.log("err");
+                    iframeFix(contentElement);
                 }
             });
         }
