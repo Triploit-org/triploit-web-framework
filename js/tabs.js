@@ -1,13 +1,15 @@
 function Tab(name, content, redirect){
     function iframeFix(contentElement){
-        contentElement.innerHTML = '<iframe src="' + content + '"></iframe>';
-        console.log("err");
+        var iframe = document.createElement("iframe");
+        iframe.setAttribute("src", content);
+        contentElement.appendChild(iframe);
     }
     
     function use($, contentElement){
         if(redirect){
             window.location = content;
         }else{
+            contentElement.children.clear();
             iframeFix(contentElement);
             $.ajax({
                 url: content,
