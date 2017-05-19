@@ -3,14 +3,17 @@ function Tab(name, content, redirect){
         if(redirect){
             window.location = content;
         }else{
+            contentElement.innerHTML = "";
             contentElement.innerHTML = $.ajax({
                 url: content,
                 type: "GET",
                 success: function(data){
                     contentElement.innerHTML = data;
+                    console.log("done");
                 },
                 error: function(){
                     contentElement.innerHTML = '<iframe src="' + content + '"></iframe>';
+                    console.log("err");
                 }
             });
         }
