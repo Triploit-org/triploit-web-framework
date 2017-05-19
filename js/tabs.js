@@ -8,6 +8,9 @@ function Tab(name, content, redirect){
                 type: "GET",
                 success: function(data){
                     contentElement.innerHTML = data;
+                },
+                error: function(){
+                    contentElement.innerHTML = '<iframe src="' + content + '"></iframe>';
                 }
             });
         }
