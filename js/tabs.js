@@ -8,7 +8,7 @@ function Tab(name, content, redirect){
         if(redirect){
             window.location = content;
         }else{
-            contentElement.innerHTML = "";
+            iframeFix(contentElement);
             contentElement.innerHTML = $.ajax({
                 url: content,
                 type: "GET",
@@ -17,9 +17,6 @@ function Tab(name, content, redirect){
                     if(contentElement.children.length == 0){
                         iframeFix(contentElement);
                     }
-                },
-                error: function(){
-                    iframeFix(contentElement);
                 }
             });
         }
