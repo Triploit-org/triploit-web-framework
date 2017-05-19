@@ -9,7 +9,7 @@ function Tab(name, content, redirect){
             window.location = content;
         }else{
             iframeFix(contentElement);
-            contentElement.innerHTML = $.ajax({
+            $.ajax({
                 url: content,
                 type: "GET",
                 success: function(data){
