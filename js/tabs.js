@@ -9,7 +9,9 @@ function Tab(name, content, redirect){
         if(redirect){
             window.location = content;
         }else{
-            contentElement.children.clear();
+            while(contentElement.children.length > 0){
+                contentElement.children[0].remove();
+            }
             iframeFix(contentElement);
             $.ajax({
                 url: content,
